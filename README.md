@@ -22,3 +22,12 @@ RUN "data_preparation.py" File in order to generate Test and Train dataset.
 ```
 python data_preparation.py 
 ```
+
+### Data prep for multiple assay_id  model
+	
+RUN "split_by_assay.py" for generating individual test and train set for each assay id.
+```
+python split_by_assay.py
+```
+> Above script will generate "./assay_split/test/" and "./assay_split/test/" Folder with test and training sets.    
+> NOTE:- Before executing split_by_assay.py make sure data_preparation.py executed successfully. 	
