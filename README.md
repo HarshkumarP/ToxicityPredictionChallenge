@@ -30,4 +30,10 @@ RUN "split_by_assay.py" for generating individual test and train set for each as
 python split_by_assay.py
 ```
 > Above script will generate "./assay_split/test/" and "./assay_split/test/" Folder with test and training sets.    
-> NOTE:- Before executing split_by_assay.py make sure data_preparation.py executed successfully. 	
+> NOTE:- Before executing split_by_assay.py make sure data_preparation.py executed successfully. 
+
+# Feature Selection
+
+# Building Classifier(Single model for entire dataset)
+
+# Building Classifier(Multiple model for each assay_id)
