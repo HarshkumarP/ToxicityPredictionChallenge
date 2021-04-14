@@ -12,7 +12,7 @@ Programming-Language: **Python**
 - numpy
 - os
 
-# 1. DATA PREPARATION
+# Data Preparation
 
 ##### Directory input contains Test and train set with unmapped features data, and separate feamat.csv with features.
 Mapping of features from feamat.csv to test and train dataset carried out by following script.
