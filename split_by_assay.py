@@ -1,17 +1,13 @@
 '''
 Author: Team NextGen x2020flg@stfx.ca, x2020fli@stfx.ca, x2020fle@stfx.ca
 
-This script gets the features from feamat.csv and generate the train and test dataset on the Basis of Chemical ID.
-
-'ID' Column of train and test used to Join column 'V1' from the feamat data.
-Removes Zerovariance features (All 0's) 
+This script devide test and train dataset for each assay_id  
 
 Output:
-train_mapped.csv: Train dataset
-test_mapped.csv: Test dataset
-train_feature_analysis.csv: General statistical information of train dataset
-test_feature_analysis.csv: General statistical information of test dataset
+/assay_split/train: This folder will have divided train data set for all assayid
+/assay_split/test: This folder will have divided test data set for all assayid
 '''
+
 
 import pandas as pd
 import os
