@@ -5,8 +5,8 @@
 # System setup and Requirement
 Programming-Language: **Python**
 	
-Python package requirements:
-###### (Following packages can be installed using "pip", refer python official documentation for installing packages)
+###### Python package requirements:
+> ###### (Following packages can be installed using "pip", refer python official documentation for installing packages)
 	
 - pandas
 - numpy
