@@ -1,7 +1,7 @@
 '''
 Author: Team NextGen x2020flg@stfx.ca, x2020fli@stfx.ca, x2020fle@stfx.ca
 
-This script devide test and train dataset for each assay_id  
+This script divides test and train dataset for each assay_id  
 
 Output:
 /assay_split/train: This folder will have divided train data set for all assayid
