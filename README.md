@@ -10,7 +10,9 @@ Programming-Language: **Python**
 	
 pandas   
 numpy   
-os   
+sklearn   
+mlxtend   
+statistics   
 
 # Data Preparation
 
@@ -33,6 +35,18 @@ python multi_assay_data_prep.py
 > NOTE:- Before executing split_by_assay.py make sure data_preparation.py executed successfully. 
 
 # Feature Selection
+> ###### prerequisite: Data Preparation
+
+RUN "feature_selection_rfe.py" for Selecting features using Recursive feature elimination.
+RUN "feature_selection_sfs.py" for Selecting features using Sequential feature selector.
+RUN "feature_selection_anova.py" for Selecting features using Analysis of Variance.
+RUN "feature_selection_variance.py" for Selecting features using Variance Threshold.
+
+e.g.,
+```
+python feature_selection_rfe.py
+```
+
 
 # Building Classifier(Single model for entire dataset)
 
