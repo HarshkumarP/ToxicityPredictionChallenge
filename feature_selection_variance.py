@@ -14,6 +14,7 @@ import pandas as pd
 from sklearn.feature_selection import VarianceThreshold
 from sklearn import preprocessing
 
+# Specify threshold for eliminating features
 THRESHOLD_N=0.50
 TRAIN_DATA_FILE_PATH = './train_mapped.csv'
 

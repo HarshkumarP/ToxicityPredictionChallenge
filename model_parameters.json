@@ -1,0 +1,9 @@
+{
+	"decision_tree" : {
+		"model" : "DecisionTreeClassifier()",
+		"parameters" : {
+			"criterion" : ["gini","entropy"],
+			"max_depth" : [4,5,6]
+		}
+	}
+}

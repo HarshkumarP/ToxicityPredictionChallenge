@@ -36,7 +36,7 @@ y = split_train["Expected"]
 print("Feature selection process may take long time...")
 
 # Setting up RFE
-rfe = RFE(estimator=DecisionTreeClassifier(random_state=1), n_features_to_select=100, step=0.65)
+rfe = RFE(estimator=DecisionTreeClassifier(random_state=1), n_features_to_select=100, step=0.50)
 rfe = rfe.fit(X, y)
 
 # Retrieve list of features from the index of features selected by RFE.

@@ -70,7 +70,8 @@ python classifier.py
 > model = MLPClassifier()   
 > model = GaussianNB()   
 > model = AdaBoostClassifier(tree.DecisionTreeClassifier(random_state=1,criterion='entropy',max_depth=30),algorithm="SAMME",n_estimators=200,random_state=1)   
-> model = GradientBoostingClassifier(random_state=1, learning_rate=1.0, loss='exponential', max_depth=10, n_estimators=140)      
+> model = GradientBoostingClassifier(random_state=1, learning_rate=1.0, loss='exponential', max_depth=10, n_estimators=140)   
+> Also, import respecting classifier from the sklearn package.    
 
 #### Ensemble model
 
@@ -109,5 +110,58 @@ python multi_assay_classifier.py
 python multi_assay_merge_output.py
 ``` 
 
-  
- 
+
+# Tunning using GridSearchCV    
+> ###### prerequisite: Data Preparation
+
+For performing GridSearchCV, pass parameters into file "model_parameters.json"    
+Sample example:    
+```
+{
+	"decision_tree" : {
+		"model" : "DecisionTreeClassifier()",
+		"parameters" : {
+			"criterion" : ["gini","entropy"],
+			"max_depth" : [4,5,6,7]
+		}
+	},
+	"random_forest" : {
+		"model" : "RandomForestClassifier()",
+	    "parameters" : {
+			"n_estimators": [10,20,25,],
+			"max_depth" : [4,5,6]
+		}
+	},
+	"logistic_regression" : {
+		"model" : "LogisticRegression(solver='liblinear')",
+	    "parameters" : {
+			"C": [1,5,10],
+			"random_state": [0,1,3,8],
+			"warm_start": ["True","False"]
+		}
+	},
+	"svm" : {
+		"model" : "svm.SVC()",
+	    "parameters" : {
+			"C": [25,30,35]
+		}
+	},
+	"Kn_neighbors_classifier" : {
+		"model" : "KNeighborsClassifier()",
+	    "parameters" : {
+			"n_neighbors" : [4,5],
+			"algorithm": ["ball_tree"],
+			"leaf_size": [25,30,35]
+		}
+	}
+}
+```
+
+> Using above sample params GridSearchCV will return best scores with params for all models.    
+> In above example "model" contains classifier method, and "parameters" contains range of parameters for tuning classifier.    
+> NOTE:- Make sure to import classifier into "grid_search_cv.py". 
+
+After setting parameters RUN "grid_search_cv.py".   
+```
+python grid_search_cv.py
+```
