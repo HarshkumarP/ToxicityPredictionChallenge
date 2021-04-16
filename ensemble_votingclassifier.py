@@ -23,7 +23,7 @@ warnings.filterwarnings("ignore")
 
 TRAIN_DATA_FILE_PATH = './train_mapped.csv'
 TEST_DATA_FILE_PATH = './test_mapped.csv'
-RAW_TEST_DATA = './test.csv'
+RAW_TEST_DATA = './input/test.csv'
 
 # Reading Train and Test Data files
 all_train_data = pd.read_csv(TRAIN_DATA_FILE_PATH)

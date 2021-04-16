@@ -6,7 +6,7 @@
 Programming-Language: **Python**
 	
 ###### Python package requirements:
-> ###### (Following packages can be installed using "pip", refer python official documentation for installing packages)
+> ###### (Following packages can be installed using "pip", for e.g., "pip install pandas")
 	
 pandas   
 numpy   
@@ -15,7 +15,7 @@ mlxtend
 statistics   
 xgboost   
 lightgbm   
-warnings   
+   
 
 # Data Preparation
 
