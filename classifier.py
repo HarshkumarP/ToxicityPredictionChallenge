@@ -55,10 +55,10 @@ train_X, val_X, train_y, val_y = train_test_split(X, y, random_state=1)
 # Building model -> Predicting results -> Storing prediction output into .CSV
 model = BaggingClassifier(base_estimator=tree.DecisionTreeClassifier(random_state=1,
                                                                      criterion='entropy',
-																	 max_depth=35,
-																	 class_weight='balanced'),
-																	 random_state=1,
-																	 n_estimators=20)
+                                                                     max_depth=35,
+                                                                     class_weight='balanced'),
+                                                                     random_state=1,
+                                                                     n_estimators=20)
 
 model = model.fit(X, y)
 val_predictions = model.predict(X_test)
