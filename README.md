@@ -78,8 +78,8 @@ python ensemble_votingclassifier.py
 ```  
 
 > NOTE:- Currently weights for voting classifier are hardcoded as [1,1] which was identified by iterating with range(1,3)   
-> Modify code as per following to determine best weight distribution.    
-> ``` 
+> Modify code as per following to determine best weight distribution before building classifier.    
+``` 
   # loop iteration to tune weight
    for i in range(1,3):
         for j in range(1,3):
@@ -87,7 +87,7 @@ python ensemble_votingclassifier.py
   vc = VotingClassifier(estimators=estimators,voting='hard',weights=[i,j])
   f1 = cross_val_score(vc,X,y,cv=5,scoring='f1_macro')
   acc = cross_val_score(vc,X,y,cv=5)
-  ```
+```
 
 
 # Building Classifier (Multiple model for each assay_id)    
