@@ -20,13 +20,15 @@ lightgbm
 # Data Preparation
 
 ##### Directory input contains Test and train set with unmapped features data, and separate feamat.csv with features.
-Mapping of features from feamat.csv to test and train dataset carried out by following script.
+Mapping of features from feamat.csv to test and train dataset carried out by following script.   
+> Move to directory containing "data_preparation.py"
 		
 RUN "data_preparation.py" File in order to generate Test and Train dataset.
 	
 ```
 python data_preparation.py 
 ```
+> Above mentioned script will create csv's 1. test_mapped.csv, 2. train_mapped.csv used for testing and training model.   
 
 ### Data prep for multiple assay_id  model
 	
