@@ -58,8 +58,8 @@ python feature_selection_rfe.py
 Process of Training, Testing and predicting individual assay_id model works in following manner:    
 1. Split data set into each assay_id csv file. (RUN "multi_assay_data_prep.py", refer "Data Preparation" Part of README)    
 2. Train model and predict result for each assay_id. (RUN "multi_assay_internal_eval.py")
-> GUID TO RUN: There are two option present for running "multi_assay_classifier.py" A. all_features B. predict_output
-> SET 'all_features' True when training against all the features, if set False, then provide list of features in "FEATURES".
+> GUID TO RUN: There are two option present for running "multi_assay_classifier.py" A. all_features B. predict_output    
+> SET 'all_features' True when training against all the features, if set False, then provide list of features in "FEATURES".    
 > SET 'predict_output' Set is as False while performing internal evaluations, as it will only perform cross-validation instead of predicting and storing result in csv's.    
 3. Merge output as per the format of test.csv, using prediction stored in csv's in step 2. (RUN "multi_assay_merge_output.py")
 
