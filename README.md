@@ -13,6 +13,9 @@ numpy
 sklearn   
 mlxtend   
 statistics   
+xgboost   
+lightgbm   
+warnings   
 
 # Data Preparation
 
@@ -50,6 +53,41 @@ python feature_selection_rfe.py
 
 # Building Classifier (Single model for entire dataset)    
 > ###### prerequisite: Data Preparation
+
+RUN "classifier.py" for Building BaggingClassifier as a single model for whole dataset.
+```
+python classifier.py
+```
+> Modify "features" List in classifier.py for selecting features for training a model.   
+> For other types of classifier, update line no 56. with the required classifier, for example;    
+> model = tree.DecisionTreeClassifier(random_state=1,criterion='entropy',max_depth=30)   
+> model = RandomForestClassifier(random_state=1)   
+> model = svm.SVC()   
+> model = LogisticRegression(solver='liblinear')   
+> model = GradientBoostingClassifier(n_estimators=150, learning_rate=1.0,max_depth=1, random_state=1)   
+> model = MLPClassifier()   
+> model = GaussianNB()   
+> model = AdaBoostClassifier(tree.DecisionTreeClassifier(random_state=1,criterion='entropy',max_depth=30),algorithm="SAMME",n_estimators=200,random_state=1)   
+> model = GradientBoostingClassifier(random_state=1, learning_rate=1.0, loss='exponential', max_depth=10, n_estimators=140)      
+
+#### Ensemble model
+
+RUN "ensemble_votingclassifier.py" to ensemble xgb and lgbm. 
+```
+python ensemble_votingclassifier.py
+```  
+
+> NOTE:- Currently weights for voting classifier are hardcoded as [1,1] which was identified by iterating with range(1,3)   
+> Modify code as per following to determine best weight distribution.    
+> ``` 
+  # loop iteration to tune weight
+   for i in range(1,3):
+        for j in range(1,3):
+
+  vc = VotingClassifier(estimators=estimators,voting='hard',weights=[i,j])
+  f1 = cross_val_score(vc,X,y,cv=5,scoring='f1_macro')
+  acc = cross_val_score(vc,X,y,cv=5)
+  ```
 
 
 # Building Classifier (Multiple model for each assay_id)    
