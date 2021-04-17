@@ -86,10 +86,9 @@ python ensemble_votingclassifier.py
   # loop iteration to tune weight
    for i in range(1,3):
         for j in range(1,3):
-
-  vc = VotingClassifier(estimators=estimators,voting='hard',weights=[i,j])
-  f1 = cross_val_score(vc,X,y,cv=5,scoring='f1_macro')
-  acc = cross_val_score(vc,X,y,cv=5)
+  		vc = VotingClassifier(estimators=estimators,voting='hard',weights=[i,j])
+  		f1 = cross_val_score(vc,X,y,cv=5,scoring='f1_macro')
+  		acc = cross_val_score(vc,X,y,cv=5)
 ```
 
 
