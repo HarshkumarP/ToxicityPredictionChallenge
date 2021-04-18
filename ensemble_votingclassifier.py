@@ -12,8 +12,7 @@ import pandas as pd
 import numpy as np
 from sklearn import preprocessing
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score
-from sklearn.metrics import f1_score
+from sklearn.metrics import accuracy_score, f1_score
 from sklearn.ensemble import VotingClassifier
 import xgboost as xgb
 import lightgbm as lgb
@@ -55,7 +54,7 @@ train_X, val_X, train_y, val_y = train_test_split(X, y, random_state=1)
 
 #defining base estimators
 clf1 = xgb.XGBClassifier(random_state=1,booster="gbtree",learning_rate=0.25,n_estimators=250,max_depth=12, min_child_weight=4)
-clf2 = lgb.LGBMClassifier(boosting_type= 'goss',learning_rate=0.1,n_estimators=1000,max_depth=10,num_leaves=100,max_bin = 5000)
+clf2 = lgb.LGBMClassifier(num_threads=1,boosting_type= 'goss',learning_rate=0.1,n_estimators=1000,max_depth=10,num_leaves=100,max_bin = 5000)
 estimators = [('XGB',clf1),('LGBM',clf2)]
 
 #loop iteration to tune weight
@@ -63,10 +62,10 @@ estimators = [('XGB',clf1),('LGBM',clf2)]
 #      for j in range(1,3):
 
 vc = VotingClassifier(estimators=estimators,voting='hard',weights=[1,1])
-f1 = cross_val_score(vc,X,y,cv=5,scoring='f1_macro')
-acc = cross_val_score(vc,X,y,cv=5)
-print("F1 Macro score for weights (1,1): ",np.round(np.mean(f1),5))
-print("Accuracy score for weights (1,1): ",np.round(np.mean(acc),5))
+# f1 = cross_val_score(vc,X,y,cv=5,scoring='f1_macro')
+# acc = cross_val_score(vc,X,y,cv=5)
+# print("F1 Macro score for weights (1,1): ",np.round(np.mean(f1),5))
+# print("Accuracy score for weights (1,1): ",np.round(np.mean(acc),5))
 
 vc = vc.fit(X,y)
 val_predictions = vc.predict(X_test)

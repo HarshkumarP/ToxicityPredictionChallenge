@@ -75,6 +75,18 @@ python classifier.py
 
 #### Ensemble model
 
+### RUN Following code to reproduce our Best performing model.
+
+#### NOTE:- We failed to reproduce our best score.   
+#### Reason:- Different machine(kernel, processor) produce different result using LGBM, as LGBM optimized for optimized with multi-threading.   
+####          which we realized after training model on different environment after submission on kaggle.    
+
+Submission | Internal_score | Private_score | Public_score
+---------- | -------------- | ------------ | -------------
+Submission on Kaggle | 0.80424 | 0.80775 | 0.81694 
+Expected output of following code | 0.80354 | 0.80675 | 0.81649
+
+
 RUN "ensemble_votingclassifier.py" to ensemble xgb and lgbm. 
 ```
 python ensemble_votingclassifier.py
