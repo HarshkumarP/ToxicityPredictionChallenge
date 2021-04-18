@@ -60,8 +60,8 @@ RUN "classifier.py" for Building BaggingClassifier as a single model for whole d
 ```
 python classifier.py
 ```
-> Modify "features" List in classifier.py for selecting features for training a model.   
-> For other types of classifier, update line no 56. with the required classifier, for example;    
+> Modify "features" List in classifier.py for selecting diffrent features for training a model.   
+> To Train other types of classifier, update code with the required classifier, for example;    
 > model = tree.DecisionTreeClassifier(random_state=1,criterion='entropy',max_depth=30)   
 > model = RandomForestClassifier(random_state=1)   
 > model = svm.SVC()   
