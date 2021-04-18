@@ -74,7 +74,7 @@ python classifier.py
 > Also, import respecting classifier from the sklearn package.    
 
 ## Ensemble model(RUN Following code to reproduce our Best performing model)
-
+> ###### prerequisite: Data Preparation
 
 ##### NOTE:- Our kaggle best score submission can not be Reproduced.   
 ##### Reason:- Different machine(kernel, processor) produce different result using LGBM, as LGBM optimized with multi-threading. which we realized after training model on different environment after submission on kaggle.    
