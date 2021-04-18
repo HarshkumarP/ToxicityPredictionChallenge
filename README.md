@@ -81,8 +81,8 @@ python classifier.py
 #### However, we have fixed issue which prodcue fixed result, please check expected output in below table which should be reproduced.
 Submission | Internal_score | Private_score | Public_score
 ---------- | -------------- | ------------ | -------------
-Submission on Kaggle | 0.80424 | 0.80775 | 0.81694 
-Expected output of following code | 0.80354 | 0.80675 | 0.81649
+Submission on Kaggle(Threads=NOT FIXED) | 0.80424 | 0.80775 | 0.81694 
+Expected output of following code(Threads=FIXED) | 0.80354 | 0.80675 | 0.81649
 
 
 RUN "ensemble_votingclassifier.py" to ensemble xgb and lgbm. 
