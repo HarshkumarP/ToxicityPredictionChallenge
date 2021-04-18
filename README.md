@@ -21,14 +21,14 @@ lightgbm
 
 ##### Directory input contains Test and train set with unmapped features data, and separate feamat.csv with features.
 Mapping of features from feamat.csv to test and train dataset carried out by following script.   
-> Move to directory containing "data_preparation.py"
+> Move to the directory containing "data_preparation.py"
 		
 RUN "data_preparation.py" File in order to generate Test and Train dataset.
 	
 ```
 python data_preparation.py 
 ```
-> Above mentioned script will create csv's 1. test_mapped.csv, 2. train_mapped.csv used for testing and training model.   
+> Above mentioned script will create csv's: 1. test_mapped.csv, 2. train_mapped.csv used for testing and training model.   
 
 ### Data prep for multiple assay_id  model
 	
@@ -36,8 +36,8 @@ RUN "multi_assay_data_prep.py" for generating individual test and train set for 
 ```
 python multi_assay_data_prep.py
 ```
-> Above script will generate "./assay_split/test/" and "./assay_split/test/" Folder with test and training sets.    
-> NOTE:- Before executing split_by_assay.py make sure data_preparation.py executed successfully. 
+> The above script will generate "./assay_split/test/" and "./assay_split/test/" Folder with test and training sets.    
+> NOTE:- Before executing multi_assay_data_prep.py make sure data_preparation.py executed successfully. 
 
 # Feature Selection
 > ###### prerequisite: Data Preparation
@@ -76,9 +76,9 @@ python classifier.py
 ## Ensemble model(RUN Following code to reproduce our Best performing model)
 
 
-##### NOTE:- We failed to reproduce our best score.   
-##### Reason:- Different machine(kernel, processor) produce different result using LGBM, as LGBM optimized for optimized with multi-threading. which we realized after training model on different environment after submission on kaggle.    
-#### However, we have fixed issue which prodcue fixed result, please check expected output in below table which should be reproduced.
+##### NOTE:- Our kaggle best score submission can not be Reproduced.   
+##### Reason:- Different machine(kernel, processor) produce different result using LGBM, as LGBM optimized with multi-threading. which we realized after training model on different environment after submission on kaggle.    
+#### However, we have fixed this issue which prodcue fixed result, please check expected output in below table which should be reproduced by running following code.
 Submission | Internal_score | Private_score | Public_score
 ---------- | -------------- | ------------ | -------------
 Submission on Kaggle(Threads=NOT FIXED) | 0.80424 | 0.80775 | 0.81694 
