@@ -73,13 +73,12 @@ python classifier.py
 > model = GradientBoostingClassifier(random_state=1, learning_rate=1.0, loss='exponential', max_depth=10, n_estimators=140)   
 > Also, import respecting classifier from the sklearn package.    
 
-#### Ensemble model
+## Ensemble model(RUN Following code to reproduce our Best performing model)
 
-### RUN Following code to reproduce our Best performing model.
 
-#### NOTE:- We failed to reproduce our best score.   
-#### Reason:- Different machine(kernel, processor) produce different result using LGBM, as LGBM optimized for optimized with multi-threading. which we realized after training model on different environment after submission on kaggle.    
-### However, we have fixed issue which prodcue fixed result, please check expected output in below table which should be the expected result.
+##### NOTE:- We failed to reproduce our best score.   
+##### Reason:- Different machine(kernel, processor) produce different result using LGBM, as LGBM optimized for optimized with multi-threading. which we realized after training model on different environment after submission on kaggle.    
+#### However, we have fixed issue which prodcue fixed result, please check expected output in below table which should be the expected result.
 Submission | Internal_score | Private_score | Public_score
 ---------- | -------------- | ------------ | -------------
 Submission on Kaggle | 0.80424 | 0.80775 | 0.81694 
