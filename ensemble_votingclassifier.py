@@ -63,9 +63,9 @@ estimators = [('XGB',clf1),('LGBM',clf2)]
 
 vc = VotingClassifier(estimators=estimators,voting='hard',weights=[1,1])
 f1 = cross_val_score(vc,X,y,cv=5,scoring='f1_macro')
-# acc = cross_val_score(vc,X,y,cv=5)
+acc = cross_val_score(vc,X,y,cv=5)
 print("F1 Macro score for weights (1,1): ",np.round(np.mean(f1),5))
-# print("Accuracy score for weights (1,1): ",np.round(np.mean(acc),5))
+print("Accuracy score for weights (1,1): ",np.round(np.mean(acc),5))
 
 vc = vc.fit(X,y)
 val_predictions = vc.predict(X_test)
