@@ -91,7 +91,7 @@ python ensemble_votingclassifier.py
 ```  
 
 > NOTE:- Currently weights for voting classifier are hardcoded as [1,1] which was identified by iterating with range(1,3)   
-> Modify code as per following to determine best weight distribution before building classifier.    
+> In case of finding best weigth for your ensemble perform following modification in code.     
 ``` 
   # loop iteration to tune weight
    for i in range(1,3):
