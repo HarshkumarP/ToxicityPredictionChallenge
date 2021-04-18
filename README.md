@@ -78,7 +78,7 @@ python classifier.py
 
 ##### NOTE:- Our kaggle best score submission can not be Reproduced.   
 ##### Reason:- Different machine(kernel, processor) produce different result using LGBM, as LGBM optimized with multi-threading. which we realized after training model on different environment after submission on kaggle.    
-#### However, we have fixed this issue which prodcue fixed result, please check expected output in below table which should be reproduced by running following code.
+#### However, we have fixed this issue which reproduce fixed result, please check expected output in below table which should be reproduced by running following code.
 Submission | Internal_score | Private_score | Public_score
 ---------- | -------------- | ------------ | -------------
 Submission on Kaggle(Threads=NOT FIXED) | 0.80424 | 0.80775 | 0.81694 
